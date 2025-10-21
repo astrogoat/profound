@@ -11,6 +11,6 @@ class ProfoundFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'profound';
+        return Profound::class;
     }
 }

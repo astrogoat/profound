@@ -29,7 +29,7 @@ class ProfoundServiceProvider extends AppPackageServiceProvider
     {
         parent::register();
 
-        $this->app->singleton('profound', function () {
+        $this->app->singleton(Profound::class, function () {
             return new Profound();
         });
     }

@@ -24,4 +24,13 @@ class ProfoundServiceProvider extends AppPackageServiceProvider
     {
         $package->name('profound')->hasConfigFile()->hasViews();
     }
+
+    public function register(): void
+    {
+        parent::register();
+
+        $this->app->singleton('profound', function () {
+            return new Profound();
+        });
+    }
 }

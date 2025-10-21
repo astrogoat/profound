@@ -2,10 +2,10 @@
 
 namespace Astrogoat\Profound;
 
+use Astrogoat\Profound\Settings\ProfoundSettings;
 use Helix\Lego\Apps\App;
 use Helix\Lego\Apps\AppPackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Astrogoat\Profound\Settings\ProfoundSettings;
 
 class ProfoundServiceProvider extends AppPackageServiceProvider
 {

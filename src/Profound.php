@@ -2,9 +2,9 @@
 
 namespace Astrogoat\Profound;
 
+use Astrogoat\Profound\Settings\ProfoundSettings;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Astrogoat\Profound\Settings\ProfoundSettings;
 
 class Profound
 {
@@ -17,7 +17,7 @@ class Profound
         $settings = app(ProfoundSettings::class);
 
         $this->baseUrl = config('profound.base_url');
-        $this->apiKey  = $settings->api_key ?? null;
+        $this->apiKey = $settings->api_key ?? null;
         $this->enabled = $settings->enabled ?? false;
     }
 
@@ -35,7 +35,7 @@ class Profound
             if (! $response->successful()) {
                 Log::warning('Profound analytics request failed', [
                     'status' => $response->status(),
-                    'body'   => $response->body(),
+                    'body' => $response->body(),
                 ]);
 
                 return null;

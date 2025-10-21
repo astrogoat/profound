@@ -2,9 +2,9 @@
 
 namespace Astrogoat\Profound\Tests;
 
+use Astrogoat\Profound\ProfoundServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Astrogoat\Profound\ProfoundServiceProvider;
 
 class TestCase extends Orchestra
 {

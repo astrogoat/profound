@@ -48,7 +48,7 @@ class Profound
                 'status' => $response->status(),
                 'body' => $response->json(),
             ]);
-            
+
             return $response->json();
         } catch (\Throwable $e) {
             Log::error('Profound analytics error', [

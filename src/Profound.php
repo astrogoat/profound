@@ -28,7 +28,10 @@ class Profound
         }
 
         try {
-            $response = Http::withToken($this->apiKey)
+            $response = Http::withHeaders([
+                'x-api-key' => $this->apiKey,
+                'Accept' => 'application/json',
+            ])
                 ->baseUrl($this->baseUrl)
                 ->post('/logs/custom', $payload);
 

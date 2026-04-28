@@ -28,7 +28,10 @@ class Profound
         }
 
         try {
-            $response = Http::withToken($this->apiKey)
+            $response = Http::withHeaders([
+                'x-api-key' => $this->apiKey,
+                'Accept' => 'application/json',
+            ])
                 ->baseUrl($this->baseUrl)
                 ->post('/logs/custom', $payload);
 
@@ -41,6 +44,11 @@ class Profound
                 return null;
             }
 
+            Log::warning('Well done', [
+                'status' => $response->status(),
+                'body' => $response->json(),
+            ]);
+            
             return $response->json();
         } catch (\Throwable $e) {
             Log::error('Profound analytics error', [
